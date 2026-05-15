@@ -1,14 +1,15 @@
 import { google } from 'googleapis'
 
 function getAuth() {
-  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON
-  if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON is not set')
-  const credentials = JSON.parse(raw)
-  return new google.auth.JWT({
-    email: credentials.client_email,
-    key: credentials.private_key,
-    scopes: ['https://www.googleapis.com/auth/calendar'],
-  })
+  const clientId = process.env.GOOGLE_CLIENT_ID
+  const clientSecret = process.env.GOOGLE_CLIENT_SECRET
+  const refreshToken = process.env.GOOGLE_REFRESH_TOKEN
+  if (!clientId || !clientSecret || !refreshToken) {
+    throw new Error('GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET or GOOGLE_REFRESH_TOKEN is not set')
+  }
+  const oauth2 = new google.auth.OAuth2(clientId, clientSecret)
+  oauth2.setCredentials({ refresh_token: refreshToken })
+  return oauth2
 }
 
 export interface Slot {
