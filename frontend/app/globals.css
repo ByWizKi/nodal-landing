@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Tailwind v4 theme tokens
+   ========================================================= */
+@theme {
+  /* Colors */
+  --color-paper-0:   #FFFFFF;
+  --color-paper-50:  #FAFAF7;
+  --color-paper-100: #F4F4EE;
+  --color-paper-200: #EAEAE2;
+  --color-paper-300: #D8D8CE;
+  --color-paper-400: #B5B5A8;
+  --color-paper-500: #8A8A7C;
+  --color-paper-600: #5F5F55;
+  --color-paper-700: #3D3D36;
+  --color-paper-800: #1F1F1B;
+  --color-paper-900: #0E0E0C;
+
+  --color-cobalt-50:  #EEF1FE;
+  --color-cobalt-100: #DDE3FD;
+  --color-cobalt-200: #B9C4FB;
+  --color-cobalt-300: #8B9DF8;
+  --color-cobalt-400: #5C76F2;
+  --color-cobalt-500: #2B4FE8;
+  --color-cobalt-600: #1E3CC9;
+  --color-cobalt-700: #182FA0;
+  --color-cobalt-800: #14267D;
+  --color-cobalt-900: #0E1B5C;
+
+  /* Font families — overridden at runtime by CSS vars from next/font */
+  --font-serif: var(--font-instrument-serif, 'Instrument Serif', 'Times New Roman', serif);
+  --font-sans:  var(--font-geist, 'Geist', ui-sans-serif, system-ui, sans-serif);
+  --font-mono:  var(--font-geist-mono, 'Geist Mono', ui-monospace, monospace);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15,23,42,.04), 0 1px 1px rgba(15,23,42,.03);
+  --shadow-md: 0 2px 4px rgba(15,23,42,.04), 0 8px 24px -8px rgba(15,23,42,.08);
+  --shadow-lg: 0 4px 8px rgba(15,23,42,.04), 0 24px 48px -12px rgba(15,23,42,.12);
+  --shadow-xl: 0 8px 16px rgba(15,23,42,.06), 0 40px 80px -16px rgba(15,23,42,.18);
+
+  /* Border radius */
+  --radius-0:    0px;
+  --radius-1:    4px;
+  --radius-2:    8px;
+  --radius-3:    12px;
+  --radius-4:    16px;
+  --radius-5:    24px;
+  --radius-full: 999px;
+}
+
+/* =========================================================
+   Nodal Design System — role tokens (light)
+   ========================================================= */
+:root {
+  --bg:            #FAFAF7;
+  --bg-elevated:   #FFFFFF;
+  --bg-sunken:     #F4F4EE;
+  --surface:       #FFFFFF;
+  --surface-hover: #F4F4EE;
+  --ink:           #0E0E0C;
+  --ink-muted:     #5F5F55;
+  --ink-subtle:    #8A8A7C;
+  --ink-inverse:   #FAFAF7;
+  --border:        #EAEAE2;
+  --border-strong: #D8D8CE;
+  --accent:        #2B4FE8;
+  --accent-hover:  #1E3CC9;
+  --accent-soft:   #EEF1FE;
+  --on-accent:     #FFFFFF;
+  --focus-ring:    #5C76F2;
+  --green-500:     #1A8F5C;
+  --green-100:     #DFF3EA;
+  --amber-500:     #B86E11;
+  --amber-100:     #FBEACD;
+  --red-500:       #C8331C;
+  --red-100:       #F8DCD6;
+}
+
+[data-theme="dark"] {
+  --bg:            #0B0B0A;
+  --bg-elevated:   #131312;
+  --bg-sunken:     #060605;
+  --surface:       #131312;
+  --surface-hover: #1C1C1A;
+  --ink:           #F2F1EC;
+  --ink-muted:     #8F8E86;
+  --ink-subtle:    #5C5B54;
+  --ink-inverse:   #0B0B0A;
+  --border:        #232220;
+  --border-strong: #2E2D2A;
+  --accent:        #7C95FF;
+  --accent-hover:  #94A8FF;
+  --accent-soft:   rgba(124,149,255,.10);
+  --on-accent:     #0B0B0A;
+  --focus-ring:    #7C95FF;
+  --green-500:     #4AD295;
+  --green-100:     rgba(74,210,149,.14);
+  --amber-500:     #E3A04F;
+  --amber-100:     rgba(227,160,79,.14);
+  --red-500:       #F37961;
+  --red-100:       rgba(243,121,97,.14);
+  --shadow-sm:     0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:     0 2px 4px rgba(0,0,0,.4), 0 8px 24px -8px rgba(0,0,0,.6);
+  --shadow-lg:     0 4px 8px rgba(0,0,0,.4), 0 24px 48px -12px rgba(0,0,0,.7);
+  --shadow-xl:     0 8px 16px rgba(0,0,0,.5), 0 40px 80px -16px rgba(0,0,0,.8);
+}
+
+/* =========================================================
+   Base
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* =========================================================
+   Pulse animation for hero eyebrow
+   ========================================================= */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.6); opacity: 0.6; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+.pulse-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.3;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+/* =========================================================
+   Wrap utility
+   ========================================================= */
+.wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* =========================================================
+   Focus styles
+   ========================================================= */
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 0;
+  border-color: var(--focus-ring) !important;
+}
+
+/* =========================================================
+   Responsive helpers (mobile-first overrides)
+   ========================================================= */
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .hero-visual { display: none !important; }
+}
+@media (max-width: 900px) {
+  .section-head { grid-template-columns: 1fr !important; gap: 16px !important; margin-bottom: 48px !important; }
+  .services-grid { grid-template-columns: 1fr !important; }
+  .method-grid   { grid-template-columns: 1fr 1fr !important; }
+  .cases-row     { grid-template-columns: 1fr !important; gap: 32px !important; padding: 40px 0 !important; }
+  .stack-grid    { grid-template-columns: repeat(3,1fr) !important; }
+  .footer-grid   { grid-template-columns: 1fr 1fr !important; }
+  .faq-row       { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .testimonial-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .infra-grid    { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .stats-row     { grid-template-columns: repeat(2,1fr) !important; gap: 20px !important; }
+  .section-pad   { padding-top: 80px !important; padding-bottom: 80px !important; }
+  .nav-links     { display: none !important; }
+}
+@media (max-width: 560px) {
+  .method-grid   { grid-template-columns: 1fr !important; }
+  .stack-grid    { grid-template-columns: repeat(2,1fr) !important; }
+  .footer-grid   { grid-template-columns: 1fr !important; }
+  .hero-stats    { grid-template-columns: repeat(2,1fr) !important; }
+}
