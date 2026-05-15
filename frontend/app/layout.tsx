@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Nodal — Outils IA pour PME',
+  title: 'Nodal AI',
   description:
     "Nodal conçoit des outils SaaS et des automatisations sur mesure pour les PME. L'IA qui parle votre métier.",
   metadataBase: new URL(
