@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- nodes -->
-  <circle cx="6" cy="26" r="3" fill="#2563EB"/>
-  <circle cx="6" cy="6" r="3" fill="#2563EB"/>
-  <circle cx="26" cy="26" r="3" fill="#2563EB"/>
-  <circle cx="26" cy="6" r="3" fill="#2563EB"/>
-  <!-- edges forming N -->
-  <line x1="6" y1="26" x2="6" y2="6" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="6" y1="6" x2="26" y2="26" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="26" y1="26" x2="26" y2="6" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <style>
+    .node { fill: #000; }
+    .edge { stroke: #000; }
+    @media (prefers-color-scheme: dark) {
+      .node { fill: #fff; }
+      .edge { stroke: #fff; }
+    }
+  </style>
+  <circle class="node" cx="6" cy="26" r="3"/>
+  <circle class="node" cx="6" cy="6" r="3"/>
+  <circle class="node" cx="26" cy="26" r="3"/>
+  <circle class="node" cx="26" cy="6" r="3"/>
+  <line class="edge" x1="6" y1="26" x2="6" y2="6" stroke-width="2.5" stroke-linecap="round"/>
+  <line class="edge" x1="6" y1="6" x2="26" y2="26" stroke-width="2.5" stroke-linecap="round"/>
+  <line class="edge" x1="26" y1="26" x2="26" y2="6" stroke-width="2.5" stroke-linecap="round"/>
 </svg>
