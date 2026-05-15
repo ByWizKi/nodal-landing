@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nodal-ai-services.com'
   ),
+  icons: {
+    icon: [
+      { url: '/icon-light.svg', media: '(prefers-color-scheme: light)' },
+      { url: '/icon-dark.svg', media: '(prefers-color-scheme: dark)' },
+    ],
+  },
 }
 
 export default function RootLayout({
