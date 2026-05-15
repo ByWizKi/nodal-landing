@@ -1,0 +1,179 @@
+/* =========================================================
+   Nodal Design System — Tokens
+   Extracted CSS custom properties only.
+   Drop this into your project to use Nodal's color, type,
+   spacing, and elevation scales.
+   ========================================================= */
+
+/* =========================================================
+   TOKENS — Light theme (default)
+   ========================================================= */
+:root {
+  /* Type families */
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Type scale */
+  --t-display-1: clamp(64px, 9vw, 128px);
+  --t-display-2: clamp(48px, 6.5vw, 88px);
+  --t-h1: clamp(40px, 5vw, 64px);
+  --t-h2: clamp(28px, 3.5vw, 44px);
+  --t-h3: 26px;
+  --t-h4: 18px;
+  --t-body: 15px;
+  --t-small: 13px;
+  --t-caption: 11px;
+
+  /* Spacing scale (px) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 192px;
+
+  /* Radii */
+  --r-0: 0px;
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+  --r-4: 16px;
+  --r-5: 24px;
+  --r-full: 999px;
+
+  /* Borders */
+  --bw: 1px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 1px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 2px 4px rgba(15, 23, 42, 0.04), 0 8px 24px -8px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 4px 8px rgba(15, 23, 42, 0.04), 0 24px 48px -12px rgba(15, 23, 42, 0.12);
+  --shadow-xl: 0 8px 16px rgba(15, 23, 42, 0.06), 0 40px 80px -16px rgba(15, 23, 42, 0.18);
+
+  /* Color — Neutrals (paper-warm) */
+  --paper-0: #FFFFFF;
+  --paper-50: #FAFAF7;
+  --paper-100: #F4F4EE;
+  --paper-200: #EAEAE2;
+  --paper-300: #D8D8CE;
+  --paper-400: #B5B5A8;
+  --paper-500: #8A8A7C;
+  --paper-600: #5F5F55;
+  --paper-700: #3D3D36;
+  --paper-800: #1F1F1B;
+  --paper-900: #0E0E0C;
+
+  /* Color — Cobalt accent ladder */
+  --cobalt-50: #EEF1FE;
+  --cobalt-100: #DDE3FD;
+  --cobalt-200: #B9C4FB;
+  --cobalt-300: #8B9DF8;
+  --cobalt-400: #5C76F2;
+  --cobalt-500: #2B4FE8;
+  --cobalt-600: #1E3CC9;
+  --cobalt-700: #182FA0;
+  --cobalt-800: #14267D;
+  --cobalt-900: #0E1B5C;
+
+  /* Semantic */
+  --green-500: #1A8F5C;
+  --green-100: #DFF3EA;
+  --amber-500: #B86E11;
+  --amber-100: #FBEACD;
+  --red-500: #C8331C;
+  --red-100: #F8DCD6;
+
+  /* Role tokens — light */
+  --bg: var(--paper-50);
+  --bg-elevated: var(--paper-0);
+  --bg-sunken: var(--paper-100);
+  --surface: var(--paper-0);
+  --surface-hover: var(--paper-100);
+  --ink: var(--paper-900);
+  --ink-muted: var(--paper-600);
+  --ink-subtle: var(--paper-500);
+  --ink-inverse: var(--paper-50);
+  --border: var(--paper-200);
+  --border-strong: var(--paper-300);
+  --accent: var(--cobalt-500);
+  --accent-hover: var(--cobalt-600);
+  --accent-soft: var(--cobalt-50);
+  --accent-ink: #FFFFFF;
+  --on-accent: #FFFFFF;
+  --focus-ring: var(--cobalt-400);
+
+  --grid-line: rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   TOKENS — Dark theme
+   ========================================================= */
+[data-theme="dark"] {
+  --bg: #0B0B0A;
+  --bg-elevated: #131312;
+  --bg-sunken: #060605;
+  --surface: #131312;
+  --surface-hover: #1C1C1A;
+  --ink: #F2F1EC;
+  --ink-muted: #8F8E86;
+  --ink-subtle: #5C5B54;
+  --ink-inverse: #0B0B0A;
+  --border: #232220;
+  --border-strong: #2E2D2A;
+  --accent: #7C95FF;
+  --accent-hover: #94A8FF;
+  --accent-soft: rgba(124, 149, 255, 0.10);
+  --accent-ink: #0B0B0A;
+  --on-accent: #0B0B0A;
+  --focus-ring: #7C95FF;
+
+  --green-500: #4AD295;
+  --green-100: rgba(74, 210, 149, 0.14);
+  --amber-500: #E3A04F;
+  --amber-100: rgba(227, 160, 79, 0.14);
+  --red-500: #F37961;
+  --red-100: rgba(243, 121, 97, 0.14);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4), 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.4), 0 24px 48px -12px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.5), 0 40px 80px -16px rgba(0, 0, 0, 0.8);
+
+  --grid-line: rgba(255, 255, 255, 0.045);
+}
+
+/* =========================================================
+   Accent variants (set on :root or [data-theme])
+   ========================================================= */
+[data-accent="orange"] {
+  --accent: #E2541F;
+  --accent-hover: #C4441A;
+  --accent-soft: rgba(226, 84, 31, 0.10);
+  --focus-ring: #E2541F;
+}
+[data-accent="violet"] {
+  --accent: #6A4BD1;
+  --accent-hover: #5839BD;
+  --accent-soft: rgba(106, 75, 209, 0.10);
+  --focus-ring: #6A4BD1;
+}
+[data-accent="forest"] {
+  --accent: #1E7A53;
+  --accent-hover: #176142;
+  --accent-soft: rgba(30, 122, 83, 0.10);
+  --focus-ring: #1E7A53;
+}
+[data-theme="dark"][data-accent="orange"] { --accent: #FF7E4D; --accent-hover: #FF9670; --focus-ring: #FF7E4D; --accent-soft: rgba(255, 126, 77, 0.12); }
+[data-theme="dark"][data-accent="violet"] { --accent: #A186FF; --accent-hover: #B59FFF; --focus-ring: #A186FF; --accent-soft: rgba(161, 134, 255, 0.12); }
+[data-theme="dark"][data-accent="forest"] { --accent: #4ABF8A; --accent-hover: #62D29D; --focus-ring: #4ABF8A; --accent-soft: rgba(74, 191, 138, 0.12); }
+
+/* Type families fallback note:
+   Load these fonts via Google Fonts in your <head>:
+   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+*/

@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nodal — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Reusable logo mark (referenced via <use href="#nodal-mark">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Graph N: 4 nodes + 3 edges -->
+    <symbol id="nodal-mark" viewBox="0 0 60 60">
+      <line class="edge" x1="14" y1="14" x2="14" y2="46" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+      <line class="edge" x1="14" y1="14" x2="46" y2="46" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+      <line class="edge" x1="46" y1="14" x2="46" y2="46" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+      <circle class="node" cx="14" cy="14" r="5.2" fill="currentColor" />
+      <circle class="node" cx="14" cy="46" r="5.2" fill="currentColor" />
+      <circle class="node" cx="46" cy="14" r="5.2" fill="currentColor" />
+      <circle class="node" cx="46" cy="46" r="5.2" fill="currentColor" />
+    </symbol>
+    <!-- Outline variant (for placards) -->
+    <symbol id="nodal-mark-outline" viewBox="0 0 60 60">
+      <line x1="14" y1="14" x2="14" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="14" y1="14" x2="46" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <line x1="46" y1="14" x2="46" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      <circle cx="14" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="14" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="46" cy="14" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+      <circle cx="46" cy="46" r="5" fill="none" stroke="currentColor" stroke-width="2" />
+    </symbol>
+  </defs>
+</svg>
+
+</head>
+<body>
+
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
+<header class="topbar" data-screen-label="topbar">
+  <div class="wrap topbar-inner">
+    <a href="#top" class="brand-lockup" aria-label="Nodal">
+      <svg viewBox="0 0 60 60" style="color: var(--ink)"><use href="#nodal-mark" /></svg>
+      <span class="wordmark">Nodal</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#brand">Brand</a>
+      <a href="#logo">Logo</a>
+      <a href="#color">Color</a>
+      <a href="#type">Typography</a>
+      <a href="#scale">Scale</a>
+      <a href="#icons">Icons</a>
+      <a href="#components">Components</a>
+      <a href="#voice">Voice</a>
+      <a href="#in-use">In&nbsp;Use</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="theme-toggle" data-action="toggle-theme" aria-label="Toggle theme">
+        <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3.5"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"/></svg>
+        <span data-theme-label>DARK</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero wrap" data-screen-label="hero">
+  <div class="eyebrow-row">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="eyebrow">Nodal · Design System · v1.0 · Mai 2026</span>
+  </div>
+  <h1>
+    Un système<br/>
+    pensé pour <em>connecter</em><br/>
+    l'IA aux PME.
+  </h1>
+  <p class="sub">
+    Le langage visuel de Nodal — agence IA spécialisée dans les outils SaaS et l'automatisation
+    pour les petites et moyennes entreprises. Précis, éditorial, sans bruit. Un système
+    qui priorise la clarté technique sur la décoration.
+  </p>
+  <div class="meta">
+    <div class="cell"><span class="k">Famille</span><span class="v">Instrument&nbsp;Serif · Geist</span></div>
+    <div class="cell"><span class="k">Accent</span><span class="v">Cobalt 500</span></div>
+    <div class="cell"><span class="k">Modes</span><span class="v">Clair · Sombre</span></div>
+    <div class="cell"><span class="k">Statut</span><span class="v">Production</span></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     BRAND — Principles
+     ========================================================= -->
+<section class="section wrap" id="brand" data-screen-label="01 Brand">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">01 — Marque</div>
+    </div>
+    <div>
+      <div class="title">Quatre nœuds, trois liens, une&nbsp;<span class="italic">conviction</span>.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Nodal connecte les outils, les données et les équipes des PME. Le système visuel
+        traduit cette mission : structures sobres, lignes nettes, hiérarchie typographique
+        sans compromis. Chaque composant prouve quelque chose ; rien n'est décoratif.
+      </p>
+    </div>
+  </div>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="num">PRINCIPE 01</div>
+      <h3>Précis, jamais bavard.</h3>
+      <p>La densité de l'information est un signal de respect. On affiche ce qui importe — pas plus, pas moins. Les marges, le silence et l'espace négatif font partie du contenu.</p>
+    </div>
+    <div class="principle">
+      <div class="num">PRINCIPE 02</div>
+      <h3>Le serif porte la voix.</h3>
+      <p>Instrument Serif italique signe les moments éditoriaux. Geist supporte le travail. Cette dualité tient à elle seule l'identité — pas besoin d'illustration superflue.</p>
+    </div>
+    <div class="principle">
+      <div class="num">PRINCIPE 03</div>
+      <h3>Construit, pas dessiné.</h3>
+      <p>Le mark est un graphe : quatre nœuds, trois arêtes, zéro courbe gratuite. La géométrie est lisible à tous les usages, du favicon 16&nbsp;px au billboard.</p>
+    </div>
+    <div class="principle">
+      <div class="num">PRINCIPE 04</div>
+      <h3>Une seule couleur fait le travail.</h3>
+      <p>Cobalt 500 est l'unique accent. Le reste de la palette est neutre, papier-chaud en clair, encre profonde en sombre. Les couleurs sémantiques restent rares et conventionnelles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     LOGO
+     ========================================================= -->
+<section class="section wrap" id="logo" data-screen-label="02 Logo">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">02 — Logo</div>
+    </div>
+    <div>
+      <div class="title">Le mark.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Le symbole Nodal est un graphe minimal : quatre nœuds disposés en N, reliés par trois arêtes diagonales et verticales.
+        Il fonctionne en monochrome, à n'importe quelle échelle, sur fond clair, sombre ou couleur.
+      </p>
+    </div>
+  </div>
+
+  <!-- Centerpiece -->
+  <div class="logo-canvas" style="margin-bottom: 16px;">
+    <svg class="giant-mark" viewBox="0 0 60 60" style="color: var(--ink)"><use href="#nodal-mark" /></svg>
+  </div>
+
+  <!-- Variants -->
+  <div class="logo-grid" style="margin-bottom: 16px;">
+    <div class="logo-tile">
+      <div class="preview">
+        <div class="brand-lockup" style="gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:36px;height:36px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span class="wordmark" style="font-size:40px">Nodal</span>
+        </div>
+      </div>
+      <div class="caption"><span>Lockup principal</span><span>—</span></div>
+    </div>
+    <div class="logo-tile dark">
+      <div class="preview">
+        <div class="brand-lockup" style="gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:36px;height:36px;color:#F2F1EC"><use href="#nodal-mark"/></svg>
+          <span class="wordmark" style="font-size:40px; color:#F2F1EC">Nodal</span>
+        </div>
+      </div>
+      <div class="caption"><span>Sombre</span><span>—</span></div>
+    </div>
+    <div class="logo-tile accent">
+      <div class="preview">
+        <div class="brand-lockup" style="gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:36px;height:36px;color:var(--on-accent)"><use href="#nodal-mark"/></svg>
+          <span class="wordmark" style="font-size:40px; color:var(--on-accent)">Nodal</span>
+        </div>
+      </div>
+      <div class="caption" style="color: var(--on-accent); opacity: 0.7;"><span>Accent</span><span>—</span></div>
+    </div>
+    <div class="logo-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:64px;height:64px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="caption"><span>Mark seul</span><span>App icon</span></div>
+    </div>
+    <div class="logo-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:64px;height:64px;color:var(--accent)"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="caption"><span>Mark cobalt</span><span>—</span></div>
+    </div>
+    <div class="logo-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:64px;height:64px;color:var(--ink)"><use href="#nodal-mark-outline"/></svg>
+      </div>
+      <div class="caption"><span>Outline</span><span>Cas particuliers</span></div>
+    </div>
+  </div>
+
+  <!-- Sizes -->
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px;">
+    <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--r-3); padding: 40px;">
+      <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-subtle); text-transform: uppercase; margin-bottom: 24px;">Tailles minimales</div>
+      <div style="display: flex; gap: 48px; align-items: flex-end; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:16px;height:16px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;">16 PX · FAVICON</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:24px;height:24px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;">24 PX</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:48px;height:48px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;">48 PX · APP</span>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+          <svg viewBox="0 0 60 60" style="width:96px;height:96px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;">96 PX · PRINT</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearspace-demo" style="padding: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 18px; align-items: center;">
+        <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-subtle); text-transform: uppercase; align-self: flex-start;">Clear space</div>
+        <div class="clearspace-frame">
+          <svg viewBox="0 0 60 60" style="width:88px;height:88px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span class="x-unit top">x</span>
+          <span class="x-unit bottom">x = ½ nœud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Misuse -->
+  <div style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--ink-subtle); text-transform: uppercase; margin: 32px 0 16px;">Mauvais usages</div>
+  <div class="dont-grid">
+    <div class="dont-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:60px;height:60px;color:#E94560; transform: rotate(15deg)"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="note"><span class="x-mark">×</span> Ne pas faire pivoter le mark</div>
+    </div>
+    <div class="dont-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:90px;height:50px;color:var(--ink)" preserveAspectRatio="none"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="note"><span class="x-mark">×</span> Ne pas étirer ni déformer</div>
+    </div>
+    <div class="dont-tile" style="background: linear-gradient(135deg, #FF6B6B, #FFD93D);">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:60px;height:60px;color:#222"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="note" style="color:white"><span class="x-mark">×</span> Pas de fonds dégradés ou photographiques</div>
+    </div>
+    <div class="dont-tile">
+      <div class="preview">
+        <svg viewBox="0 0 60 60" style="width:60px;height:60px;color:var(--ink); filter: drop-shadow(2px 4px 0 rgba(43, 79, 232, 0.6))"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="note"><span class="x-mark">×</span> Pas d'ombres portées ni d'effets</div>
+    </div>
+    <div class="dont-tile">
+      <div class="preview" style="display: flex; gap: 4px; align-items: center;">
+        <svg viewBox="0 0 60 60" style="width:30px;height:30px;color:#22C55E"><use href="#nodal-mark"/></svg>
+        <svg viewBox="0 0 60 60" style="width:30px;height:30px;color:#F59E0B"><use href="#nodal-mark"/></svg>
+        <svg viewBox="0 0 60 60" style="width:30px;height:30px;color:#EC4899"><use href="#nodal-mark"/></svg>
+      </div>
+      <div class="note"><span class="x-mark">×</span> Pas de couleurs hors palette</div>
+    </div>
+    <div class="dont-tile">
+      <div class="preview">
+        <span style="font-family: var(--font-serif); font-style: italic; font-size: 48px; color: var(--ink);">Nodal</span>
+      </div>
+      <div class="note"><span class="x-mark">×</span> Le wordmark seul, sans le mark</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     COLOR
+     ========================================================= -->
+<section class="section wrap" id="color" data-screen-label="03 Color">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">03 — Couleur</div>
+    </div>
+    <div>
+      <div class="title">Une palette&nbsp;<span class="italic">disciplinée</span>.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Deux modes : papier chaud en clair, encre profonde en sombre. Un seul accent, le Cobalt 500.
+        Les neutres font 90% du travail ; la couleur signale l'interaction et l'état.
+      </p>
+    </div>
+  </div>
+
+  <!-- Theme pair: Light & Dark side-by-side -->
+  <div class="theme-pair" style="margin-bottom: 48px;">
+    <div class="swatch-card" style="background: #FAFAF7; color: #0E0E0C;">
+      <div class="hdr" style="border-color: #EAEAE2">
+        <div class="title">Light mode</div>
+        <span class="badge" style="background: #F4F4EE; color: #5F5F55;">paper · default</span>
+      </div>
+      <div class="swatch-row">
+        <div class="swatch" style="background: #FAFAF7; color: #0E0E0C; border-color: #EAEAE2;"><span class="role">Background</span><span class="hex">#FAFAF7</span><span class="name">paper-50</span></div>
+        <div class="swatch" style="background: #FFFFFF; color: #0E0E0C; border-color: #EAEAE2;"><span class="role">Surface</span><span class="hex">#FFFFFF</span><span class="name">paper-0</span></div>
+        <div class="swatch" style="background: #0E0E0C; color: #FAFAF7; border-color: transparent;"><span class="role">Ink</span><span class="hex">#0E0E0C</span><span class="name">paper-900</span></div>
+        <div class="swatch" style="background: #5F5F55; color: #FAFAF7; border-color: transparent;"><span class="role">Ink muted</span><span class="hex">#5F5F55</span><span class="name">paper-600</span></div>
+        <div class="swatch" style="background: #EAEAE2; color: #1F1F1B; border-color: transparent;"><span class="role">Border</span><span class="hex">#EAEAE2</span><span class="name">paper-200</span></div>
+        <div class="swatch" style="background: #2B4FE8; color: #FFFFFF; border-color: transparent; border-bottom: 0;"><span class="role">Accent</span><span class="hex">#2B4FE8</span><span class="name">cobalt-500</span></div>
+      </div>
+    </div>
+
+    <div class="swatch-card" style="background: #131312; color: #F2F1EC; border-color: #232220;">
+      <div class="hdr" style="border-color: #232220">
+        <div class="title">Dark mode</div>
+        <span class="badge" style="background: #1C1C1A; color: #8F8E86; border: 0;">ink · night</span>
+      </div>
+      <div class="swatch-row">
+        <div class="swatch" style="background: #0B0B0A; color: #F2F1EC; border-color: #232220;"><span class="role">Background</span><span class="hex">#0B0B0A</span><span class="name">ink-bg</span></div>
+        <div class="swatch" style="background: #131312; color: #F2F1EC; border-color: #232220;"><span class="role">Surface</span><span class="hex">#131312</span><span class="name">ink-surface</span></div>
+        <div class="swatch" style="background: #F2F1EC; color: #0B0B0A; border-color: transparent;"><span class="role">Ink</span><span class="hex">#F2F1EC</span><span class="name">ink-text</span></div>
+        <div class="swatch" style="background: #8F8E86; color: #0B0B0A; border-color: transparent;"><span class="role">Ink muted</span><span class="hex">#8F8E86</span><span class="name">ink-muted</span></div>
+        <div class="swatch" style="background: #232220; color: #F2F1EC; border-color: transparent;"><span class="role">Border</span><span class="hex">#232220</span><span class="name">ink-border</span></div>
+        <div class="swatch" style="background: #7C95FF; color: #0B0B0A; border-color: transparent; border-bottom: 0;"><span class="role">Accent</span><span class="hex">#7C95FF</span><span class="name">cobalt-400</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cobalt ladder -->
+  <div style="margin-bottom: 16px;" class="eyebrow">Cobalt · ladder 50–900</div>
+  <div class="ladder" style="margin-bottom: 48px;">
+    <div class="step" style="background: #EEF1FE; color: #14267D;"><span class="k">50</span><span class="hex">#EEF1FE</span></div>
+    <div class="step" style="background: #DDE3FD; color: #14267D;"><span class="k">100</span><span class="hex">#DDE3FD</span></div>
+    <div class="step" style="background: #B9C4FB; color: #14267D;"><span class="k">200</span><span class="hex">#B9C4FB</span></div>
+    <div class="step" style="background: #8B9DF8; color: #14267D;"><span class="k">300</span><span class="hex">#8B9DF8</span></div>
+    <div class="step" style="background: #5C76F2; color: white;"><span class="k">400</span><span class="hex">#5C76F2</span></div>
+    <div class="step" style="background: #2B4FE8; color: white;"><span class="k">500</span><span class="hex">#2B4FE8</span></div>
+    <div class="step" style="background: #1E3CC9; color: white;"><span class="k">600</span><span class="hex">#1E3CC9</span></div>
+    <div class="step" style="background: #182FA0; color: white;"><span class="k">700</span><span class="hex">#182FA0</span></div>
+    <div class="step" style="background: #14267D; color: white;"><span class="k">800</span><span class="hex">#14267D</span></div>
+    <div class="step" style="background: #0E1B5C; color: white;"><span class="k">900</span><span class="hex">#0E1B5C</span></div>
+  </div>
+
+  <!-- Paper neutrals ladder -->
+  <div style="margin-bottom: 16px;" class="eyebrow">Paper · neutrals 0–900</div>
+  <div class="ladder" style="margin-bottom: 48px;">
+    <div class="step" style="background: #FFFFFF; color: #1F1F1B;"><span class="k">0</span><span class="hex">#FFFFFF</span></div>
+    <div class="step" style="background: #FAFAF7; color: #1F1F1B;"><span class="k">50</span><span class="hex">#FAFAF7</span></div>
+    <div class="step" style="background: #F4F4EE; color: #1F1F1B;"><span class="k">100</span><span class="hex">#F4F4EE</span></div>
+    <div class="step" style="background: #EAEAE2; color: #1F1F1B;"><span class="k">200</span><span class="hex">#EAEAE2</span></div>
+    <div class="step" style="background: #D8D8CE; color: #1F1F1B;"><span class="k">300</span><span class="hex">#D8D8CE</span></div>
+    <div class="step" style="background: #B5B5A8; color: #1F1F1B;"><span class="k">400</span><span class="hex">#B5B5A8</span></div>
+    <div class="step" style="background: #8A8A7C; color: white;"><span class="k">500</span><span class="hex">#8A8A7C</span></div>
+    <div class="step" style="background: #5F5F55; color: white;"><span class="k">600</span><span class="hex">#5F5F55</span></div>
+    <div class="step" style="background: #3D3D36; color: white;"><span class="k">700</span><span class="hex">#3D3D36</span></div>
+    <div class="step" style="background: #0E0E0C; color: white;"><span class="k">900</span><span class="hex">#0E0E0C</span></div>
+  </div>
+
+  <!-- Semantic -->
+  <div style="margin-bottom: 16px;" class="eyebrow">Semantic colors</div>
+  <div class="semantic-grid">
+    <div class="semantic">
+      <span class="pill" style="background: var(--accent-soft); color: var(--accent);"><span class="dot" style="background: var(--accent)"></span>INFO</span>
+      <h4>Cobalt 500</h4>
+      <p>Actions principales, états sélectionnés, liens, focus. Une seule couleur "vivante" dans l'interface.</p>
+    </div>
+    <div class="semantic">
+      <span class="pill" style="background: var(--green-100); color: var(--green-500);"><span class="dot" style="background: var(--green-500)"></span>SUCCESS</span>
+      <h4>Forest 500</h4>
+      <p>Confirmations, exécutions terminées, statuts "running". Couleur sobre, jamais flashy.</p>
+    </div>
+    <div class="semantic">
+      <span class="pill" style="background: var(--amber-100); color: var(--amber-500);"><span class="dot" style="background: var(--amber-500)"></span>WARN</span>
+      <h4>Amber 500</h4>
+      <p>Avertissements, états dégradés, rate-limits proches. Toujours accompagné d'un texte explicatif.</p>
+    </div>
+    <div class="semantic">
+      <span class="pill" style="background: var(--red-100); color: var(--red-500);"><span class="dot" style="background: var(--red-500)"></span>DANGER</span>
+      <h4>Crimson 500</h4>
+      <p>Erreurs, échecs de workflow, suppressions destructives. Réservé aux états critiques.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TYPOGRAPHY
+     ========================================================= -->
+<section class="section wrap" id="type" data-screen-label="04 Typography">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">04 — Typographie</div>
+    </div>
+    <div>
+      <div class="title">Un&nbsp;serif, un&nbsp;sans, un&nbsp;mono.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Instrument Serif italique pour les moments éditoriaux. Geist pour l'interface et la lecture.
+        Geist Mono pour les métadonnées, les valeurs et les labels. Tout le reste découle de ces trois familles.
+      </p>
+    </div>
+  </div>
+
+  <div class="font-trio" style="margin-bottom: 56px;">
+    <div class="font-card">
+      <div class="glyph serif italic" style="color: var(--accent);">Nn</div>
+      <div class="meta"><span class="name">Instrument Serif</span><span class="role">Display</span></div>
+      <div class="alphabet">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz · 0123456789 · €&amp;@#</div>
+    </div>
+    <div class="font-card">
+      <div class="glyph" style="font-family: var(--font-sans); font-weight: 500;">Nn</div>
+      <div class="meta"><span class="name" style="font-family: var(--font-sans); font-style: normal; font-weight: 500;">Geist</span><span class="role">Interface</span></div>
+      <div class="alphabet">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz · 0123456789 · €&amp;@#</div>
+    </div>
+    <div class="font-card">
+      <div class="glyph mono">Nn</div>
+      <div class="meta"><span class="name" style="font-family: var(--font-mono); font-style: normal;">Geist Mono</span><span class="role">Data &amp; Labels</span></div>
+      <div class="alphabet mono" style="font-family: var(--font-mono); font-size: 12px;">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOo · 0123 · {} () [] →</div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom: 24px;">Échelle typographique</div>
+  <div class="type-stack">
+    <div class="type-row">
+      <span class="step-label">Display 1</span>
+      <div class="sample serif" style="font-size: 96px; line-height: 0.95; letter-spacing: -0.025em;">Connecter <em class="italic" style="color: var(--accent)">l'intelligence</em></div>
+      <span class="spec">Instrument Serif · 96 / 91 · −2.5%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">Display 2</span>
+      <div class="sample serif" style="font-size: 64px; line-height: 1; letter-spacing: -0.022em;">Outils sur mesure</div>
+      <span class="spec">Instrument Serif · 64 / 64 · −2.2%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">H1</span>
+      <div class="sample serif" style="font-size: 48px; line-height: 1.05; letter-spacing: -0.02em;">Automatiser les workflows répétitifs.</div>
+      <span class="spec">Instrument Serif · 48 / 50 · −2%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">H2</span>
+      <div class="sample serif italic" style="font-size: 36px; line-height: 1.1; letter-spacing: -0.018em;">Un graphe pour chaque processus.</div>
+      <span class="spec">Instrument Serif Italic · 36 / 40 · −1.8%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">H3</span>
+      <div class="sample" style="font-size: 24px; font-weight: 500; line-height: 1.25; letter-spacing: -0.015em;">Pourquoi un graphe ? Parce que le travail réel est un graphe.</div>
+      <span class="spec">Geist 500 · 24 / 30 · −1.5%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">H4</span>
+      <div class="sample" style="font-size: 18px; font-weight: 500; line-height: 1.35;">Comprendre votre stack avant d'automatiser.</div>
+      <span class="spec">Geist 500 · 18 / 24 · −1%</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">Body</span>
+      <div class="sample" style="font-size: 15px; line-height: 1.6; max-width: 60ch; color: var(--ink-muted);">Nous concevons des outils SaaS sur mesure pour les PME : extraction documentaire, qualification de leads, scoring, suivi opérationnel. Chaque mission commence par une cartographie — un graphe — de votre métier.</div>
+      <span class="spec">Geist 400 · 15 / 24</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">Small</span>
+      <div class="sample" style="font-size: 13px; line-height: 1.55; color: var(--ink-muted);">Composants secondaires, helper text, micro-copy. À utiliser sous le body, jamais comme support principal.</div>
+      <span class="spec">Geist 400 · 13 / 20</span>
+    </div>
+    <div class="type-row">
+      <span class="step-label">Mono · Label</span>
+      <div class="sample mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-subtle);">METADONNÉES · STATUS · TIMESTAMP · VERSION</div>
+      <span class="spec">Geist Mono · 11 · UPPER · +14%</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SCALE — Spacing, Radii, Elevation
+     ========================================================= -->
+<section class="section wrap" id="scale" data-screen-label="05 Scale">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">05 — Échelle</div>
+    </div>
+    <div>
+      <div class="title">Espace, rayons,&nbsp;<span class="italic">élévation</span>.</div>
+      <p class="desc" style="margin-top: 24px;">
+        L'espacement suit une échelle modulaire en multiples de 4. Les rayons sont conservateurs.
+        L'élévation reste discrète — les ombres servent à séparer, pas à impressionner.
+      </p>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-bottom: 64px;">
+    <div>
+      <div class="eyebrow" style="margin-bottom: 20px;">Échelle d'espacement</div>
+      <div class="scale-row"><span class="k">--s-1</span><div class="bar" style="width: 4px;"></div><span class="v">4&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-2</span><div class="bar" style="width: 8px;"></div><span class="v">8&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-3</span><div class="bar" style="width: 12px;"></div><span class="v">12&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-4</span><div class="bar" style="width: 16px;"></div><span class="v">16&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-5</span><div class="bar" style="width: 24px;"></div><span class="v">24&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-6</span><div class="bar" style="width: 32px;"></div><span class="v">32&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-7</span><div class="bar" style="width: 48px;"></div><span class="v">48&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-8</span><div class="bar" style="width: 64px;"></div><span class="v">64&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-9</span><div class="bar" style="width: 96px;"></div><span class="v">96&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-10</span><div class="bar" style="width: 128px;"></div><span class="v">128&nbsp;px</span></div>
+      <div class="scale-row"><span class="k">--s-11</span><div class="bar" style="width: 192px;"></div><span class="v">192&nbsp;px</span></div>
+    </div>
+
+    <div>
+      <div class="eyebrow" style="margin-bottom: 20px;">Grille de référence</div>
+      <div style="background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--r-3); padding: 28px;">
+        <p style="margin: 0 0 16px; font-size: 14px; color: var(--ink-muted); line-height: 1.55;">
+          Tous les rythmes verticaux et horizontaux dérivent de la même échelle. Les conteneurs principaux utilisent <span class="mono" style="color: var(--ink);">--s-6</span> (32&nbsp;px) à <span class="mono" style="color: var(--ink);">--s-7</span> (48&nbsp;px). Les sections respirent à <span class="mono" style="color: var(--ink);">--s-9</span> (96&nbsp;px). Les composants internes restent dans 4–24&nbsp;px.
+        </p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 24px;">
+          <div style="aspect-ratio: 4 / 3; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 16px 16px; border: 1px solid var(--border); border-radius: var(--r-2); padding: 16px;">
+            <div style="background: var(--accent-soft); border: 1px solid var(--accent); height: 100%; border-radius: var(--r-1);"></div>
+          </div>
+          <div style="aspect-ratio: 4 / 3; background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); background-size: 16px 16px; border: 1px solid var(--border); border-radius: var(--r-2); padding: 32px;">
+            <div style="background: var(--accent-soft); border: 1px solid var(--accent); height: 100%; border-radius: var(--r-1);"></div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;"><span>PADDING 16</span><span>PADDING 32</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom: 20px;">Rayons</div>
+  <div class="radius-grid" style="margin-bottom: 64px;">
+    <div class="radius-tile"><div class="box" style="border-radius: 0;"></div><span class="label">0</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 4px;"></div><span class="label">4</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 8px;"></div><span class="label">8</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 12px;"></div><span class="label">12</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 16px;"></div><span class="label">16</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 24px;"></div><span class="label">24</span></div>
+    <div class="radius-tile"><div class="box" style="border-radius: 999px;"></div><span class="label">full</span></div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom: 20px;">Élévation</div>
+  <div class="elev-grid">
+    <div class="elev-tile sm"><span class="pos">sm</span><span class="tag">PROXIMITY</span></div>
+    <div class="elev-tile md"><span class="pos">md</span><span class="tag">HOVER · CARD</span></div>
+    <div class="elev-tile lg"><span class="pos">lg</span><span class="tag">POPOVER</span></div>
+    <div class="elev-tile xl"><span class="pos">xl</span><span class="tag">MODAL</span></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ICONS
+     ========================================================= -->
+<section class="section wrap" id="icons" data-screen-label="06 Icons">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">06 — Iconographie</div>
+    </div>
+    <div>
+      <div class="title">Trait constant. Grille de 24.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Toutes les icônes sont dessinées sur une grille de 24×24, trait 1.5&nbsp;px, terminaisons rondes.
+        Style proche du linéaire technique — lisible à 16&nbsp;px, jamais figuratif.
+      </p>
+    </div>
+  </div>
+
+  <div class="icon-construction" style="margin-bottom: 32px;">
+    <div class="canvas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="2.2"/>
+        <circle cx="18" cy="6" r="2.2"/>
+        <circle cx="18" cy="18" r="2.2"/>
+        <circle cx="6" cy="18" r="2.2"/>
+        <path d="M8 6h8M18 8v8M16 18H8M6 16V8"/>
+      </svg>
+    </div>
+    <div>
+      <h3 style="font-family: var(--font-serif); font-size: 32px; font-style: italic; margin: 0 0 16px; letter-spacing: -0.015em;">Construction.</h3>
+      <p style="font-size: 14px; line-height: 1.6; color: var(--ink-muted); margin: 0;">
+        Grille 24·24 · zone vivante 20·20 (padding 2). Trait 1.5&nbsp;px en standard ; 2&nbsp;px pour les icônes filled.
+        Les sommets s'arrondissent (line-cap round, join round). Les angles internes restent secs.
+      </p>
+      <div style="display: flex; gap: 32px; margin-top: 24px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+        <span><span style="color: var(--ink); display:block;">24px</span>grid</span>
+        <span><span style="color: var(--ink); display:block;">1.5px</span>stroke</span>
+        <span><span style="color: var(--ink); display:block;">2px</span>safe area</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="icon-grid">
+    <!-- node graph -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><path d="M8 6.8l8 4.4M8 17.2l8-4.4"/></svg><span class="name">graph</span></div>
+    <!-- flow -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="6" height="6" rx="1"/><rect x="15" y="9" width="6" height="6" rx="1"/><path d="M9 12h6M13 10l2 2-2 2"/></svg><span class="name">flow</span></div>
+    <!-- bolt / automation -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg><span class="name">automate</span></div>
+    <!-- doc -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg><span class="name">document</span></div>
+    <!-- search -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span class="name">search</span></div>
+    <!-- settings -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span class="name">settings</span></div>
+    <!-- check -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg><span class="name">check</span></div>
+    <!-- close -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M6 18L18 6"/></svg><span class="name">close</span></div>
+    <!-- arrow -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="name">arrow</span></div>
+    <!-- plus -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span class="name">plus</span></div>
+    <!-- code -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 4l-4 16"/></svg><span class="name">code</span></div>
+    <!-- chart -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V8M10 20v-7M16 20V4M22 20H2"/></svg><span class="name">chart</span></div>
+    <!-- user -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 21a7 7 0 0 1 14 0"/></svg><span class="name">user</span></div>
+    <!-- bell -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6zM10 20a2 2 0 0 0 4 0"/></svg><span class="name">bell</span></div>
+    <!-- folder -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span class="name">folder</span></div>
+    <!-- terminal -->
+    <div class="icon-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10l3 2-3 2M12 15h5"/></svg><span class="name">terminal</span></div>
+  </div>
+</section>
+
+<!-- =========================================================
+     COMPONENTS
+     ========================================================= -->
+<section class="section wrap" id="components" data-screen-label="07 Components">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">07 — Composants</div>
+    </div>
+    <div>
+      <div class="title">Le&nbsp;<span class="italic">kit</span>&nbsp;de travail.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Composants atomiques utilisés dans l'ensemble du produit Nodal. Tous respectent les tokens
+        de couleur, d'espace et de typographie définis plus haut.
+      </p>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="comp-row">
+    <div class="label-col">
+      <h3>Boutons</h3>
+      <p>Quatre variantes, trois tailles. Primary pour l'action principale d'un écran (jamais deux). Secondary pour les actions adjacentes. Ghost pour les actions tertiaires.</p>
+    </div>
+    <div class="specimen">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="btn-row">
+          <button class="btn btn-primary">Lancer le workflow</button>
+          <button class="btn btn-secondary">Aperçu</button>
+          <button class="btn btn-ghost">Annuler</button>
+          <button class="btn btn-danger">Supprimer</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary btn-sm">Action SM</button>
+          <button class="btn btn-primary">Action MD</button>
+          <button class="btn btn-primary btn-lg">Action LG</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            Continuer
+          </button>
+          <button class="btn btn-secondary">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>
+            Ajouter un nœud
+          </button>
+          <button class="btn btn-secondary">
+            <kbd class="kbd">⌘</kbd><kbd class="kbd">K</kbd>
+            <span>Rechercher</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inputs -->
+  <div class="comp-row">
+    <div class="label-col">
+      <h3>Champs</h3>
+      <p>Inputs sobres, bordure 1&nbsp;px, focus avec halo cobalt à 3&nbsp;px. Les labels sont mono uppercase pour signaler leur statut de méta-information.</p>
+    </div>
+    <div class="specimen">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="field">
+          <label>Nom du workflow</label>
+          <input class="input" placeholder="Qualification de leads entrants" />
+          <span class="hint">128 caractères max</span>
+        </div>
+        <div class="field">
+          <label>Trigger</label>
+          <input class="input" value="HubSpot · New lead" />
+          <span class="hint">Connecté · synchronisé il y a 3 min</span>
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label>Prompt système</label>
+          <textarea class="input" rows="3" style="height: auto; padding: 10px 12px; resize: vertical; font-family: var(--font-mono); font-size: 13px;">Tu es un agent commercial pour une PME B2B. Qualifie le lead selon ICP, intention et budget.</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="comp-row">
+    <div class="label-col">
+      <h3>Badges &amp; statuts</h3>
+      <p>Pilules mono très compactes. Toujours un état + couleur sémantique cohérente. Le badge accent reste rare — réservé aux états "primary".</p>
+    </div>
+    <div class="specimen">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="badge"><span class="dot"></span>DRAFT</span>
+        <span class="badge badge-accent"><span class="dot"></span>ACTIVE</span>
+        <span class="badge badge-success"><span class="dot"></span>RUNNING</span>
+        <span class="badge badge-warn"><span class="dot"></span>RATE LIMIT</span>
+        <span class="badge badge-error"><span class="dot"></span>FAILED</span>
+        <span class="badge">v 0.4.2</span>
+        <span class="badge">claude-haiku-4.5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="comp-row">
+    <div class="label-col">
+      <h3>Cartes</h3>
+      <p>Conteneurs canoniques. Bordure 1&nbsp;px, rayon 12&nbsp;px, padding 24&nbsp;px. Hover discret. La carte porte titre serif italique, métadonnées mono, corps Geist.</p>
+    </div>
+    <div class="specimen">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card card-hover">
+          <span class="card-meta">WORKFLOW · 14 NŒUDS</span>
+          <h4 class="card-title">Qualification entrante</h4>
+          <p>Lead arrive de HubSpot, classifié par ICP, scoré par intention, routé vers le bon BDR.</p>
+          <div style="display: flex; gap: 8px; margin-top: 4px;">
+            <span class="badge badge-success"><span class="dot"></span>RUNNING</span>
+            <span class="badge">42 / jour</span>
+          </div>
+        </div>
+        <div class="card card-hover">
+          <span class="card-meta">AUTOMATION · 8 NŒUDS</span>
+          <h4 class="card-title">Extraction factures.</h4>
+          <p>OCR des PDF, vérification TVA, push vers Pennylane. Tolérance 99,4&nbsp;% en production.</p>
+          <div style="display: flex; gap: 8px; margin-top: 4px;">
+            <span class="badge badge-accent"><span class="dot"></span>ACTIVE</span>
+            <span class="badge">1 240 / mois</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs & toggle -->
+  <div class="comp-row">
+    <div class="label-col">
+      <h3>Tabs &amp; contrôles</h3>
+      <p>Tabs sous-lignés (jamais en pilule). Toggle compact 32×18. Avatars mono initials. Tout reste tactile mais sobre.</p>
+    </div>
+    <div class="specimen">
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="tabs" data-tabs>
+          <span class="tab" aria-selected="true">Vue d'ensemble</span>
+          <span class="tab" aria-selected="false">Graphe</span>
+          <span class="tab" aria-selected="false">Runs</span>
+          <span class="tab" aria-selected="false">Logs</span>
+          <span class="tab" aria-selected="false">Paramètres</span>
+        </div>
+        <div style="display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+          <div class="toggle on demo"><div class="track"></div><span>Auto-retry sur erreur</span></div>
+          <div class="toggle demo"><div class="track"></div><span>Mode brouillon</span></div>
+          <div style="display: flex; gap: 8px;">
+            <span class="avatar" style="background: var(--accent-soft); color: var(--accent);">CL</span>
+            <span class="avatar">MD</span>
+            <span class="avatar">JP</span>
+            <span class="avatar" style="border: 1px dashed var(--border-strong); background: transparent;">+2</span>
+          </div>
+        </div>
+        <div class="callout">
+          « Un bon workflow se relit comme une phrase. Sujet, verbe, complément. »
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     VOICE
+     ========================================================= -->
+<section class="section wrap" id="voice" data-screen-label="08 Voice">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">08 — Voix</div>
+    </div>
+    <div>
+      <div class="title">Direct, jamais&nbsp;<span class="italic">technicien</span>.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Nodal parle à des dirigeants de PME qui ne sont pas développeurs.
+        Le ton est précis, posé, presque éditorial. On évite le jargon, on illustre par le concret, on assume les chiffres.
+      </p>
+    </div>
+  </div>
+
+  <div class="voice-grid">
+    <div class="voice-card do">
+      <div class="hd">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 4 6-8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        DO
+      </div>
+      <p class="quote">« Vos commerciaux passent 4 h par semaine à qualifier des leads. Nodal le fait en 4 minutes. »</p>
+    </div>
+    <div class="voice-card dont">
+      <div class="hd">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l8 8M4 12L12 4"/></svg>
+        DON'T
+      </div>
+      <p class="quote">« Notre solution AI-native révolutionne la lead generation grâce au machine learning de pointe. »</p>
+    </div>
+    <div class="voice-card do">
+      <div class="hd">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l4 4 6-8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        DO
+      </div>
+      <p class="quote">« On commence par une carte de votre métier. Pas par un modèle. »</p>
+    </div>
+    <div class="voice-card dont">
+      <div class="hd">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l8 8M4 12L12 4"/></svg>
+        DON'T
+      </div>
+      <p class="quote">« Empowerez votre business avec un copilote IA disruptif. »</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     IN USE — Product mock
+     ========================================================= -->
+<section class="section wrap" id="in-use" data-screen-label="09 In Use">
+  <div class="section-head">
+    <div class="meta">
+      <div class="num">09 — En usage</div>
+    </div>
+    <div>
+      <div class="title">Le système, dans le produit.</div>
+      <p class="desc" style="margin-top: 24px;">
+        Un aperçu du tableau de bord Nodal — l'interface où les PME conçoivent, déploient et surveillent
+        leurs workflows IA. Tous les éléments visibles sont strictement issus du système.
+      </p>
+    </div>
+  </div>
+
+  <div class="mock-frame">
+    <div class="mock-chrome">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="url">app.nodal.fr / studio / qualification-leads</div>
+      <div style="width: 60px;"></div>
+    </div>
+    <div class="mock-body">
+      <aside class="mock-side">
+        <div class="brand-lockup" style="padding: 4px;">
+          <svg viewBox="0 0 60 60" style="width:20px;height:20px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+          <span class="wordmark" style="font-size: 22px;">Nodal</span>
+        </div>
+        <div class="group">
+          <div class="group-label">Studio</div>
+          <a class="nav-item active">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="4" r="1.5"/><circle cx="12" cy="8" r="1.5"/><circle cx="4" cy="12" r="1.5"/><path d="M5.3 4.6l5.4 2.8M5.3 11.4l5.4-2.8"/></svg>
+            Workflows
+            <span class="count">12</span>
+          </a>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 1L3 9h5l-1 6 6-8H8l1-6z"/></svg>
+            Automations
+            <span class="count">8</span>
+          </a>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M2 6h12"/></svg>
+            Templates
+          </a>
+        </div>
+        <div class="group">
+          <div class="group-label">Données</div>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5a6 6 0 0 1 12 0v6a6 6 0 0 1-12 0z"/><path d="M2 5c0 1.7 2.7 3 6 3s6-1.3 6-3M2 8c0 1.7 2.7 3 6 3s6-1.3 6-3"/></svg>
+            Sources
+            <span class="count">7</span>
+          </a>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6z"/><path d="M9 2v4h4M5 9h6M5 11h4"/></svg>
+            Documents
+          </a>
+        </div>
+        <div class="group">
+          <div class="group-label">Observer</div>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14V8M6 14V4M10 14v-7M14 14V2"/></svg>
+            Runs
+          </a>
+          <a class="nav-item">
+            <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M5 7l2 1.5L5 10M8 10h3"/></svg>
+            Logs
+          </a>
+        </div>
+        <div style="flex: 1;"></div>
+        <div style="border-top: 1px solid var(--border); padding: 12px 10px 4px; margin: 0 -14px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="avatar" style="background: var(--accent-soft); color: var(--accent);">CL</span>
+            <div>
+              <div style="font-size: 12px; color: var(--ink);">Camille L.</div>
+              <div style="font-family: var(--font-mono); font-size: 10px; color: var(--ink-subtle); letter-spacing: 0.08em;">PRO · 18 SEATS</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mock-main">
+        <div class="h-row">
+          <div>
+            <h2>Qualification entrante.</h2>
+            <div class="sub">PRODUCTION · DEPLOYÉ V0.4.2 · IL Y A 3 J</div>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-secondary btn-sm">
+              <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>
+              Nouveau run
+            </button>
+            <button class="btn btn-primary btn-sm">
+              <svg class="ico" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3l9 5-9 5z"/></svg>
+              Lancer
+            </button>
+          </div>
+        </div>
+
+        <div class="kpi-row">
+          <div class="kpi">
+            <span class="k">Runs · 30j</span>
+            <span class="v">1 247</span>
+            <span class="delta">↗ +24%</span>
+          </div>
+          <div class="kpi">
+            <span class="k">Précision</span>
+            <span class="v">94,2<span style="font-size: 18px;">%</span></span>
+            <span class="delta">↗ +1,4 pts</span>
+          </div>
+          <div class="kpi">
+            <span class="k">Latence p50</span>
+            <span class="v">3,2<span style="font-size: 18px;">s</span></span>
+            <span class="delta down">↘ −0,8 s</span>
+          </div>
+          <div class="kpi">
+            <span class="k">Coût / run</span>
+            <span class="v">0,042<span style="font-size: 18px;">€</span></span>
+            <span class="delta">↗ stable</span>
+          </div>
+        </div>
+
+        <div class="flow-grid">
+          <div class="flow-card">
+            <div class="ft-head">
+              <h4>Derniers runs.</h4>
+              <span class="badge"><span class="dot" style="background: var(--green-500);"></span>HEALTHY</span>
+            </div>
+            <div class="runs">
+              <div class="run-row">
+                <span class="status"></span>
+                <span class="name">Lead 1247 · Roussel SAS<span class="sub">ICP match · score 87 · routé Sarah</span></span>
+                <span class="when">il y a 2 min</span>
+                <span class="dur">3.1s</span>
+              </div>
+              <div class="run-row">
+                <span class="status"></span>
+                <span class="name">Lead 1246 · Atelier Beaumont<span class="sub">ICP match · score 72 · routé Marc</span></span>
+                <span class="when">il y a 4 min</span>
+                <span class="dur">2.8s</span>
+              </div>
+              <div class="run-row">
+                <span class="status warn"></span>
+                <span class="name">Lead 1245 · contact@inco<span class="sub">Données incomplètes · enrichi Clearbit</span></span>
+                <span class="when">il y a 7 min</span>
+                <span class="dur">8.4s</span>
+              </div>
+              <div class="run-row">
+                <span class="status"></span>
+                <span class="name">Lead 1244 · Mécanique Loire<span class="sub">ICP match · score 91 · routé Sarah</span></span>
+                <span class="when">il y a 12 min</span>
+                <span class="dur">2.9s</span>
+              </div>
+              <div class="run-row">
+                <span class="status err"></span>
+                <span class="name">Lead 1243 · null<span class="sub">HubSpot API · timeout · retry auto</span></span>
+                <span class="when">il y a 18 min</span>
+                <span class="dur">30.0s</span>
+              </div>
+              <div class="run-row">
+                <span class="status"></span>
+                <span class="name">Lead 1242 · Pâtisserie Léon<span class="sub">ICP no match · archivé</span></span>
+                <span class="when">il y a 23 min</span>
+                <span class="dur">2.4s</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flow-card">
+            <div class="ft-head">
+              <h4>Graphe.</h4>
+              <span class="badge">14 NŒUDS</span>
+            </div>
+            <div class="graph-canvas">
+              <svg viewBox="0 0 280 320">
+                <!-- edges -->
+                <g stroke="var(--ink-subtle)" stroke-width="1" fill="none" opacity="0.5">
+                  <path d="M140 40 L80 100"/>
+                  <path d="M140 40 L200 100"/>
+                  <path d="M80 100 L140 160"/>
+                  <path d="M200 100 L140 160"/>
+                  <path d="M140 160 L60 220"/>
+                  <path d="M140 160 L140 220"/>
+                  <path d="M140 160 L220 220"/>
+                  <path d="M60 220 L140 280"/>
+                  <path d="M140 220 L140 280"/>
+                  <path d="M220 220 L140 280"/>
+                </g>
+                <!-- active path -->
+                <g stroke="var(--accent)" stroke-width="2" fill="none">
+                  <path d="M140 40 L80 100"/>
+                  <path d="M80 100 L140 160"/>
+                  <path d="M140 160 L140 220"/>
+                  <path d="M140 220 L140 280"/>
+                </g>
+                <!-- nodes -->
+                <g>
+                  <circle cx="140" cy="40" r="10" fill="var(--accent)"/>
+                  <text x="140" y="20" text-anchor="middle" fill="var(--ink)" font-family="Geist Mono" font-size="9">TRIGGER</text>
+
+                  <circle cx="80" cy="100" r="10" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+                  <circle cx="200" cy="100" r="10" fill="var(--surface)" stroke="var(--ink-muted)" stroke-width="1.5"/>
+
+                  <circle cx="140" cy="160" r="10" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+                  <text x="158" y="164" fill="var(--ink-muted)" font-family="Geist Mono" font-size="9">classify</text>
+
+                  <circle cx="60" cy="220" r="10" fill="var(--surface)" stroke="var(--ink-muted)" stroke-width="1.5"/>
+                  <circle cx="140" cy="220" r="10" fill="var(--accent)" stroke="var(--accent)" stroke-width="1"/>
+                  <circle cx="220" cy="220" r="10" fill="var(--surface)" stroke="var(--ink-muted)" stroke-width="1.5"/>
+
+                  <circle cx="140" cy="280" r="10" fill="var(--accent)"/>
+                  <text x="140" y="302" text-anchor="middle" fill="var(--ink)" font-family="Geist Mono" font-size="9">PUSH HUBSPOT</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="row">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 60 60" style="width:24px;height:24px;color:var(--ink)"><use href="#nodal-mark"/></svg>
+        <span class="wordmark">Nodal</span>
+      </div>
+      <div class="colophon">
+        Design System v1.0 · établi en mai 2026 ·<br/>
+        Instrument Serif + Geist + Geist Mono · Cobalt 500
+      </div>
+      <div class="colophon" style="text-align: right;">
+        nodal.fr<br/>
+        hello@nodal.fr
+      </div>
+    </div>
+    <div class="colossal">Nodal.</div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     TWEAKS PANEL
+     ========================================================= -->
+<aside id="tweaks" class="tweaks-panel">
+  <div class="tw-head">
+    <h4>Tweaks</h4>
+    <button class="tw-close" data-action="close-tweaks" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 4l8 8M4 12L12 4"/></svg>
+    </button>
+  </div>
+
+  <div class="tw-row">
+    <span class="label">Thème</span>
+    <div class="seg" role="radiogroup">
+      <button data-tw="theme" data-val="light">Clair</button>
+      <button data-tw="theme" data-val="dark">Sombre</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <span class="label">Accent</span>
+    <div class="swatches">
+      <button class="swatch-pick" data-val="cobalt" style="background: #2B4FE8;" aria-label="Cobalt"></button>
+      <button class="swatch-pick" data-val="violet" style="background: #6A4BD1;" aria-label="Violet"></button>
+      <button class="swatch-pick" data-val="forest" style="background: #1E7A53;" aria-label="Forest"></button>
+      <button class="swatch-pick" data-val="orange" style="background: #E2541F;" aria-label="Orange"></button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <span class="label">Style logo</span>
+    <div class="seg" role="radiogroup">
+      <button data-tw="logoStyle" data-val="graph">Graph</button>
+      <button data-tw="logoStyle" data-val="outline">Outline</button>
+    </div>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+<script>
+  // Switch logo symbol when logoStyle changes (uses currentColor — no recolor needed)
+  (function () {
+    const obs = new MutationObserver(() => {
+      const style = document.documentElement.getAttribute("data-logo-style") || "graph";
+      const sym = style === "outline" ? "#nodal-mark-outline" : "#nodal-mark";
+      document.querySelectorAll("svg use").forEach((u) => {
+        const cur = u.getAttribute("href") || u.getAttribute("xlink:href") || "";
+        // Only swap on logo uses (those pointing to nodal-mark*)
+        if (cur.startsWith("#nodal-mark")) u.setAttribute("href", sym);
+      });
+    });
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-logo-style"] });
+  })();
+</script>
+</body>
+</html>

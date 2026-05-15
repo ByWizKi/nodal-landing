@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3020:3020"
+    environment:
+      - PORT=3020
+      - NEXT_PUBLIC_SITE_URL=http://localhost:3020
+      - GOOGLE_SERVICE_ACCOUNT_JSON=${GOOGLE_SERVICE_ACCOUNT_JSON:-}
+      - GOOGLE_CALENDAR_ID=${GOOGLE_CALENDAR_ID:-}
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+    restart: unless-stopped

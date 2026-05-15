@@ -1,0 +1,17 @@
+# Env
+.env
+.env.local
+
+# Node
+node_modules/
+frontend/node_modules/
+
+# Next.js build
+frontend/.next/
+frontend/out/
+
+# Docker
+*.log
+
+# OS
+.DS_Store
